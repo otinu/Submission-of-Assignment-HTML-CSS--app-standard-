@@ -19,6 +19,8 @@ class BooksController < ApplicationController
     book.save
     redirect_to book_path(book.id)
   end
+  
+  def 
 
 
 
