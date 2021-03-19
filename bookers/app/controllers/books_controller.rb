@@ -1,10 +1,12 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
+
   end
 
   def show
     @book = Book.find(params[:id])
+    binding.pry
   end
 
   def edit
@@ -19,14 +21,19 @@ class BooksController < ApplicationController
     book.save
     redirect_to book_path(book.id)
   end
-  
-  def 
+
+  def destroy
+    book = @books
+    book.destroy
+    redirect_to books_path(book)
+
+  end
 
 
 
   private
   def book_params
-    params.permit(:本のタイトル, :感想)
+    params.require(:book).permit(:本のタイトル, :感想)
 
   end
 
