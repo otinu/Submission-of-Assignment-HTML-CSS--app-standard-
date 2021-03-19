@@ -35,15 +35,15 @@
 <h2>新規投稿</h2>
 
 <!-- ここに新規投稿機能 -->
-<%= form_with model:@book, local:true do |book| %>
+<%= form_with model:@book, local:true do |f| %>
 
 <h4>題名</h4>
-<%= book.text_field :本のタイトル %>
+<%= f.text_field :本のタイトル %>
 
 <h4>感想</h4>
-<%= book.text_area :感想 %>
+<%= f.text_field :感想 %>
 
-<%= book.submit '投稿' %>
+<%= f.submit '投稿' %>
 
 <% end %>
 
