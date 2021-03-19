@@ -11,8 +11,8 @@
 <table>
   <thead>
     <tr>
-     <th>Title</th>
-     <th>Body</th>
+     <th>題名</th>
+     <th>感想</th>
      <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,9 +31,21 @@
 
 </table>
 
-<h2>Newbook</h2>
+
+<h2>新規投稿</h2>
 
 <!-- ここに新規投稿機能 -->
+<%= form_with model:@book, local:true do |book| %>
+
+<h4>題名</h4>
+<%= book.text_field :本のタイトル %>
+
+<h4>感想</h4>
+<%= book.text_area :感想 %>
+
+<%= book.submit '投稿' %>
+
+<% end %>
 
 
 
