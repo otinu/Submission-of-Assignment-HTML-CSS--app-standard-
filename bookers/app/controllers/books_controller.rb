@@ -5,16 +5,13 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
-    binding.pry
+     @books = Book.find(params[:id])
   end
 
   def edit
   end
 
-  def new
-    @book = Book.new
-  end
+
 
   def create
     book = Book.new(book_params)
@@ -25,7 +22,7 @@ class BooksController < ApplicationController
   def destroy
     book = @books
     book.destroy
-    redirect_to books_path(book)
+    redirect_to '/top'
 
   end
 
@@ -33,7 +30,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:本のタイトル, :感想)
+    params.permit(:本のタイトル, :感想)
 
   end
 
