@@ -9,7 +9,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <!-- フラッシュメッセージ -->
+  <% if flash[:notice] %>
+   <p><%= flash[:notice] %></p>
+  <% end %>
+
   <body>
     <%= yield %>
   </body>
+
+
+
+
 </html>

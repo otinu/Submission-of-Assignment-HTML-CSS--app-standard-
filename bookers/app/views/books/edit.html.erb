@@ -5,6 +5,8 @@
   <%= f.text_field :本のタイトル %>
   <h4>カテゴリー</h4>
   <%= f.text_area :感想 %>
-
-  <%= f.submit '保存' %>
+　<br>
+  <%= f.submit '更新' %>
+  <br>
+  <p><%= link_to "Show", book_path %> | <%= link_to "Back", books_path %></p>
 <% end %>
