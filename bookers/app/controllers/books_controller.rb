@@ -19,7 +19,8 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully!"
       redirect_to books_path(book_params)
     else
-      render action: :index
+      flash[:notice] = "error anywhere form empty"
+      redirect_to edit_book_path
     end
 
   end
@@ -35,7 +36,8 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully!"
       redirect_to book_path(book.id)
     else
-      render action: :index
+      flash[:notice] = "error anywhere form empty"
+      redirect_to books_path
     end
   end
 

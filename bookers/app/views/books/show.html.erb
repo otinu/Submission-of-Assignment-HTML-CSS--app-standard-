@@ -4,11 +4,5 @@
 <%= @book.感想 %>
 <%= @book.created_at %>
 
-
-<!-- 下記、仮作成　後程、Rubyを学ぼう7章参考---------->
-if @book unless null?
- "successfully"
-end
-
 <p><%= link_to "Edit", edit_book_path %> | <%= link_to "Back", books_path %></p>
 
