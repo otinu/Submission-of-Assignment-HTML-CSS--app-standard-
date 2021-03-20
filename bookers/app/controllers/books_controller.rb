@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
   def index
     @books = Book.all
 
@@ -9,14 +10,20 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
   end
 
-#newアクションは必要？
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to books_path(book_params)
+
+  end
+
+   #newアクションは必要？
   def new
     @book = Book.new
   end
-
-
 
   def create
     book = Book.new(book_params)
@@ -25,9 +32,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = @books
+    book = Book.find(params[:id])
     book.destroy
-    redirect_to '/top'
+    redirect_to books_path
 
   end
 
@@ -35,7 +42,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.permit(:本のタイトル, :感想)
+    params.require(:book).permit(:本のタイトル, :感想)
 
   end
 
