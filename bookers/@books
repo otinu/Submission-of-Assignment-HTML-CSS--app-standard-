@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ec2-user/environment/bookers/app/views/books/index.html.erb:26 ActionView::CompiledTemplates#_app_views_books_index_html_erb___2714729920380223584_32944880:
+
+    [1;34m21[0m:       <td><%= f.本のタイトル %></td>
+    [1;34m22[0m:       <td><%= f.感想 %></td>
+    [1;34m23[0m:       <td><%= link_to 'Show', books_path(@books) %></td>
+    [1;34m24[0m: 
+    [1;34m25[0m:       <% binding.pry %>
+ => [1;34m26[0m: 
+    [1;34m27[0m:       <td><%= link_to 'Edit', edit_book_path(@books) %></td>
+    [1;34m28[0m:       <td><%= link_to 'Destroy', books_path(@books), method: :delete %></td>
+    [1;34m29[0m:   </tr>
+    [1;34m30[0m:  <% end %>
+    [1;34m31[0m: </tbody>
+

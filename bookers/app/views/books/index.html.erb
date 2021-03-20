@@ -20,9 +20,10 @@
   <tr>
       <td><%= f.本のタイトル %></td>
       <td><%= f.感想 %></td>
-      <td><%= link_to 'Show', book_path(@books) %></td>
-      <td><%= link_to 'Edit', edit_book_path(@books) %></td>
-      <td><%= link_to 'Destroy', book_path(@books), method: :delete %></td>
+      <td><%= link_to 'Show', book_path(f.id)  %></td>
+      <td><%= link_to 'Edit', edit_book_path(f.id) %></td>
+      <td><%= link_to 'Destroy', book_path(f.id), method: :delete %></td>
+
   </tr>
  <% end %>
 </tbody>

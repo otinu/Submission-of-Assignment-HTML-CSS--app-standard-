@@ -5,10 +5,15 @@ class BooksController < ApplicationController
   end
 
   def show
-     @books = Book.find(params[:id])
+     @book = Book.find(params[:id])
   end
 
   def edit
+  end
+
+#newアクションは必要？
+  def new
+    @book = Book.new
   end
 
 
