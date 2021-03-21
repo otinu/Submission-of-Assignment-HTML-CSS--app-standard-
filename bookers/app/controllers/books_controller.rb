@@ -14,20 +14,14 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
-    if @book.update(book_params)
+    book = Book.find(params[:id])
+    if book.update(book_params)
       flash[:notice] = "successfully!"
-      redirect_to book_path(@book)
+      redirect_to book_path
     else
       flash[:notice] = "error / can't be blank"
-      @books=Book.all
       render action: :edit
     end
-  end
-
-   #newアクションは必要？
-  def new
-    @book = Book.new
   end
 
   def create
@@ -47,7 +41,7 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully!"
       redirect_to books_path
     else
-      render action: :index
+      redirect_to books_path
     end
   end
 
