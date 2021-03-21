@@ -17,10 +17,10 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     if book.update(book_params)
       flash[:notice] = "successfully!"
-      redirect_to books_path(book_params)
+      redirect_to book_path(book_params)
     else
-      flash[:notice] = "error anywhere form empty"
-      redirect_to edit_book_path
+      flash[:notice] = "error / can't be blank"
+      redirect_to edit_book_path(book.id)
     end
 
   end
@@ -36,7 +36,7 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully!"
       redirect_to book_path(book.id)
     else
-      flash[:notice] = "error anywhere form empty"
+      flash[:notice] = "error / can't be blank"
       redirect_to books_path
     end
   end
@@ -57,7 +57,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:本のタイトル, :感想)
+    params.require(:book).permit(:title, :body)
 
   end
 

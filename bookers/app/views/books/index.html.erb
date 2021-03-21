@@ -16,8 +16,8 @@
 
  <% @books.each do |f| %>
   <tr>
-      <td><%= f.本のタイトル %></td>
-      <td><%= f.感想 %></td>
+      <td><%= f.title %></td>
+      <td><%= f.body %></td>
       <td><%= link_to 'Show', book_path(f.id)  %></td>
       <td><%= link_to 'Edit', edit_book_path(f.id) %></td>
       <td><%= link_to "Destroy", book_path(f.id), method: :delete, data: { confirm: '削除を実行しますか？', commit: '削除', cancel: 'キャンセル'  } %></td>
@@ -34,11 +34,11 @@
 <%= form_with model:Book, local:true do |f| %>
 
 <h4>題名</h4>
-<%= f.text_field :本のタイトル %>
+<%= f.text_field :title %>
 <h4>感想</h4>
-<%= f.text_area :感想 %>
+<%= f.text_area :body %>
 <br>
-<%= f.submit '投稿' %>
+<%= f.submit 'Create Book' %>
 
 <% end %>
 

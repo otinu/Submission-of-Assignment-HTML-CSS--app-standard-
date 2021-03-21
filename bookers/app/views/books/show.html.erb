@@ -1,7 +1,7 @@
 <h1>Show画面です</h1>
 
-<%= @book.本のタイトル %>
-<%= @book.感想 %>
+<%= @book.title %>
+<%= @book.body %>
 <%= @book.created_at %>
 
 <p><%= link_to "Edit", edit_book_path %> | <%= link_to "Back", books_path %></p>
