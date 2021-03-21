@@ -25,13 +25,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
+    book = Book.new(book_params)     #ここでテキストで指定していたNewアクションと同じ機能を実行(空のオブジェクト作成)
     if book.save
       flash[:notice] = "successfully!"
-      redirect_to book_path(book.id)
+      redirect_to book_path(book.id) #ローカル変数book内に保存されたidの値を指定
     else
       flash[:notice] = "error / can't be blank"
-      redirect_to books_path
+      redirect_to books_path         #フラッシュメッセージは(省略)/layouts/application.html.erb 内に記述しているから、indexにリダイレクトした際に表示される。
     end
   end
 
@@ -41,12 +41,9 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully!"
       redirect_to books_path
     else
-      redirect_to books_path
+      redirect_to books_path   #フラッシュメッセージは(省略)/layouts/application.html.erb 内に記述しているから、indexにリダイレクトした際に表示される。
     end
   end
-
-
-
 
 
   private
@@ -54,11 +51,5 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
 
   end
-
-
-
-
-
-
 
 end
