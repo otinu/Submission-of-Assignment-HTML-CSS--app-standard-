@@ -10,9 +10,8 @@
   </head>
 
   <!-- フラッシュメッセージ -->
-  <% if flash[:notice] %>
-   <p><%= flash[:notice] %></p>
-  <% end %>
+  <div class="notice"><%= notice %></div>
+  <div class="alert"><%= alert %></div>
 
   <body>
 
