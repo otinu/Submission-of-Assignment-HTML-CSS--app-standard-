@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)     #ここでテキストで指定していたNewアクションと同じ機能を実行(空のオブジェクト作成)
+    book = Book.new(book_params)    
     if book.save
       flash[:notice] = "successfully!"
       redirect_to book_path(book.id) #ローカル変数book内に保存されたidの値を指定
@@ -44,6 +44,9 @@ class BooksController < ApplicationController
       redirect_to books_path   #フラッシュメッセージは(省略)/layouts/application.html.erb 内に記述しているから、indexにリダイレクトした際に表示される。
     end
   end
+  
+  def balse
+    
 
 
   private
